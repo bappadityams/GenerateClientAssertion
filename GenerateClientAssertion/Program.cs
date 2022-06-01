@@ -16,7 +16,7 @@ namespace csharp_5_jwt_sample
             var now = DateTime.UtcNow;
             var clientId = "ef52e743-741e-4dc7-8966-c2eee2604ece";
 
-            var audience = "https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db47/V2.0/token";
+            var audience = "https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db47/v2.0";
             var issuer = clientId;
             var subject = clientId;
             var jti = Guid.NewGuid().ToString(); // Needs to be a unique value each time
@@ -44,7 +44,7 @@ namespace csharp_5_jwt_sample
             var tokenHandler = new JwtSecurityTokenHandler();
             var tokenString = tokenHandler.WriteToken(token);
 
-            System.Diagnostics.Debug.WriteLine(tokenString);
+            System.Console.WriteLine(tokenString);
         }
     }
 }
