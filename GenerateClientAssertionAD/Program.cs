@@ -5,9 +5,10 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
 
+namespace generate_client_assertion_ad;
 public class Program
 {
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
         var cert = new X509Certificate2("certificate.pfx", "password");
 
@@ -57,7 +58,7 @@ public class Program
         return s;
     }
 
-    static string GetSignedClientAssertion(X509Certificate2 certificate, string tenantId, string clientId)
+    public static string GetSignedClientAssertion(X509Certificate2 certificate, string tenantId, string clientId)
 
     {
         // Get the RSA with the private key, used for signing.
