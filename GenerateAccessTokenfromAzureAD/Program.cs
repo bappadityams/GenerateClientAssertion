@@ -25,11 +25,11 @@ public class Program
         generate_client_assertion_ad.Program generateClientAssertion = new generate_client_assertion_ad.Program();
 
         var assertion = generate_client_assertion_ad.Program.GetSignedClientAssertion(cert, tenantId, clientId);
-        var accessToken =ProcessRepositories(assertion);
+        var accessToken =GetAccessToken(assertion);
         System.Console.WriteLine(accessToken);
 
     }
-    private static string? ProcessRepositories(string assertion)
+    private static string? GetAccessToken(string assertion)
     {
         var body = new Dictionary<string, string>()
                         {
